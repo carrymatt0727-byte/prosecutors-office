@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>臺灣臺島地方檢察署</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Accessibility Top Link -->
+    <a href="#main-content" class="skip-link">跳至主內容區</a>
+
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="container top-bar-inner">
+                <div class="top-links">
+                    <a href="#">回首頁</a>
+                    <a href="#">網站導覽</a>
+                    <a href="#">法務部</a>
+                    <a href="#">檢察長信箱</a>
+                    <a href="#">English</a>
+                </div>
+                <div class="font-size-controls">
+                    <span>字體大小：</span>
+                    <button class="font-btn" data-size="small">A-</button>
+                    <button class="font-btn active" data-size="medium">A</button>
+                    <button class="font-btn" data-size="large">A+</button>
+                </div>
+            </div>
+        </div>
+        <div class="nav-container container">
+            <div class="logo">
+                <!-- Using a placeholder logo similar to Taiwan government emblem -->
+                <div class="logo-img-placeholder">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>臺灣臺島地方檢察署</h1>
+                    <p>Taiwan Taidao District Prosecutors Office</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li class="dropdown">
+                        <a href="#">簡介 <i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">檢察業務簡介</a></li>
+                            <li><a href="#">檢察長介紹</a></li>
+                            <li><a href="#">歷史沿革</a></li>
+                            <li><a href="#">機關組織</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">為民服務 <i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">為民服務中心</a></li>
+                            <li><a href="#">線上申辦服務</a></li>
+                            <li><a href="court_status.html">開庭進度查詢</a></li>
+                            <li><a href="#">問卷調查</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">資訊公開 <i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">新聞稿及澄清專區</a></li>
+                            <li><a href="#">電子公布欄</a></li>
+                            <li><a href="#">公示送達</a></li>
+                            <li><a href="#">查扣物拍賣專區</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">訴訟輔導 <i class="fa-solid fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">訴訟程序介紹及輔導</a></li>
+                            <li><a href="#">書狀例稿下載</a></li>
+                            <li><a href="#">常見問題</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">司法保護</a></li>
+                </ul>
+                <div class="search-box">
+                    <input type="text" placeholder="全站搜尋..." aria-label="全站搜尋">
+                    <button aria-label="搜尋"><i class="fa-solid fa-search"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+            <div class="banner-content container">
+                <h2>落實司法正義 保障人權核心</h2>
+                <p>專業．效能．便民．透明</p>
+                <div class="banner-actions">
+                    <a href="#" class="btn-primary">認識臺島地檢署</a>
+                    <a href="#" class="btn-secondary">最新防詐宣導</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Services -->
+        <section class="quick-services-section">
+            <div class="container">
+                <div class="quick-services">
+                    <a href="#" class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-users"></i></div>
+                        <h3>國民法官</h3>
+                    </a>
+                    <a href="#" class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-laptop-file"></i></div>
+                        <h3>線上申辦</h3>
+                    </a>
+                    <a href="#" class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-gavel"></i></div>
+                        <h3>查扣物拍賣</h3>
+                    </a>
+                    <a href="#" class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-comments"></i></div>
+                        <h3>訴訟輔導</h3>
+                    </a>
+                    <a href="#" class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                        <h3>電話分機</h3>
+                    </a>
+                    <a href="court_status.html" class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <h3>開庭進度查詢</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="news-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>最新公告</h2>
+                    <a href="#" class="view-all">更多公告 <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="news-container">
+                    <div class="news-tabs">
+                        <button class="tab-btn active" data-target="tab-all">全部消息</button>
+                        <button class="tab-btn" data-target="tab-news">新聞稿</button>
+                        <button class="tab-btn" data-target="tab-board">電子公布欄</button>
+                        <button class="tab-btn" data-target="tab-notice">公示送達</button>
+                    </div>
+                    
+                    <div class="news-content active" id="tab-all">
+                        <div class="news-list">
+                            <a href="#" class="news-item">
+                                <div class="news-meta">
+                                    <span class="news-date">113-05-09</span>
+                                    <span class="tag tag-blue">最新消息</span>
+                                </div>
+                                <h3 class="news-title">臺島地檢署辦理113年度檢察官法治教育研習，提升辦案專業</h3>
+                            </a>
+                            <a href="#" class="news-item">
+                                <div class="news-meta">
+                                    <span class="news-date">113-05-05</span>
+                                    <span class="tag tag-green">新聞稿</span>
+                                </div>
+                                <h3 class="news-title">臺島地檢署偵破大型跨國詐欺機房案，聲押主嫌獲准</h3>
+                            </a>
+                            <a href="#" class="news-item">
+                                <div class="news-meta">
+                                    <span class="news-date">113-04-28</span>
+                                    <span class="tag tag-orange">電子公布欄</span>
+                                </div>
+                                <h3 class="news-title">本署113年度第2次查扣物變價拍賣公告（含汽車、重機）</h3>
+                            </a>
+                            <a href="#" class="news-item">
+                                <div class="news-meta">
+                                    <span class="news-date">113-04-20</span>
+                                    <span class="tag tag-red">公示送達</span>
+                                </div>
+                                <h3 class="news-title">113年度偵字第1234號被告李○明公示送達公告</h3>
+                            </a>
+                            <a href="#" class="news-item">
+                                <div class="news-meta">
+                                    <span class="news-date">113-04-15</span>
+                                    <span class="tag tag-blue">最新消息</span>
+                                </div>
+                                <h3 class="news-title">防詐騙宣導：接獲不明來電要求匯款，請立即撥打165反詐騙專線</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Useful Links -->
+        <section class="links-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>相關連結</h2>
+                </div>
+                <div class="links-grid">
+                    <a href="#" class="link-card">法務部</a>
+                    <a href="#" class="link-card">最高檢察署</a>
+                    <a href="#" class="link-card">高等檢察署</a>
+                    <a href="#" class="link-card">司法院</a>
+                    <a href="#" class="link-card">法務部調查局</a>
+                    <a href="#" class="link-card">內政部警政署</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <span>臺灣臺島地方檢察署</span>
+                    </div>
+                    <ul class="contact-list">
+                        <li><i class="fa-solid fa-location-dot"></i> 100 臺島市中正區司法大道2號</li>
+                        <li><i class="fa-solid fa-phone"></i> 總機：(02) 2345-6789</li>
+                        <li><i class="fa-solid fa-clock"></i> 辦公時間：週一至週五 08:30~12:30、13:30~17:30</li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>資訊服務</h3>
+                    <ul>
+                        <li><a href="#">網站導覽</a></li>
+                        <li><a href="#">隱私權政策</a></li>
+                        <li><a href="#">資訊安全政策</a></li>
+                        <li><a href="#">政府網站資料開放宣告</a></li>
+                    </ul>
+                </div>
+                <div class="footer-qrcode">
+                    <h3>關注我們</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-line"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Taiwan Taidao District Prosecutors Office. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
