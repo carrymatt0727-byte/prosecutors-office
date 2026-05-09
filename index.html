@@ -9,17 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Accessibility Top Link -->
     <a href="#main-content" class="skip-link">跳至主內容區</a>
 
     <header class="main-header">
         <div class="top-bar">
             <div class="container top-bar-inner">
                 <div class="top-links">
-                    <a href="#">回首頁</a>
-                    <a href="#">網站導覽</a>
-                    <a href="#">法務部</a>
-                    <a href="#">檢察長信箱</a>
+                    <a href="index.html">回首頁</a>
+                    <a href="content.html?page=sitemap">網站導覽</a>
+                    <a href="content.html?page=contact">檢察長信箱</a>
                     <a href="#">English</a>
                 </div>
                 <div class="font-size-controls">
@@ -31,8 +29,7 @@
             </div>
         </div>
         <div class="nav-container container">
-            <div class="logo">
-                <!-- Using a placeholder logo similar to Taiwan government emblem -->
+            <a href="index.html" class="logo">
                 <div class="logo-img-placeholder">
                     <i class="fa-solid fa-scale-balanced"></i>
                 </div>
@@ -40,45 +37,45 @@
                     <h1>臺灣臺島地方檢察署</h1>
                     <p>Taiwan Taidao District Prosecutors Office</p>
                 </div>
-            </div>
+            </a>
             <nav class="main-nav">
                 <ul class="nav-menu">
                     <li class="dropdown">
-                        <a href="#">簡介 <i class="fa-solid fa-angle-down"></i></a>
+                        <a href="content.html?page=intro">簡介 <i class="fa-solid fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">檢察業務簡介</a></li>
-                            <li><a href="#">檢察長介紹</a></li>
-                            <li><a href="#">歷史沿革</a></li>
-                            <li><a href="#">機關組織</a></li>
+                            <li><a href="content.html?page=business">檢察業務簡介</a></li>
+                            <li><a href="content.html?page=chief">檢察長介紹</a></li>
+                            <li><a href="content.html?page=history">歷史沿革</a></li>
+                            <li><a href="content.html?page=organization">機關組織</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#">為民服務 <i class="fa-solid fa-angle-down"></i></a>
+                        <a href="content.html?page=service">為民服務 <i class="fa-solid fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">為民服務中心</a></li>
-                            <li><a href="#">線上申辦服務</a></li>
+                            <li><a href="content.html?page=service_center">為民服務中心</a></li>
+                            <li><a href="content.html?page=online">線上申辦服務</a></li>
                             <li><a href="court_status.html">開庭進度查詢</a></li>
-                            <li><a href="#">問卷調查</a></li>
+                            <li><a href="content.html?page=survey">問卷調查</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#">資訊公開 <i class="fa-solid fa-angle-down"></i></a>
+                        <a href="list.html?type=info">資訊公開 <i class="fa-solid fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">新聞稿及澄清專區</a></li>
-                            <li><a href="#">電子公布欄</a></li>
-                            <li><a href="#">公示送達</a></li>
-                            <li><a href="#">查扣物拍賣專區</a></li>
+                            <li><a href="list.html?type=news">新聞稿及澄清專區</a></li>
+                            <li><a href="list.html?type=board">電子公布欄</a></li>
+                            <li><a href="list.html?type=notice">公示送達</a></li>
+                            <li><a href="list.html?type=auction">查扣物拍賣專區</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#">訴訟輔導 <i class="fa-solid fa-angle-down"></i></a>
+                        <a href="content.html?page=counseling">訴訟輔導 <i class="fa-solid fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">訴訟程序介紹及輔導</a></li>
-                            <li><a href="#">書狀例稿下載</a></li>
-                            <li><a href="#">常見問題</a></li>
+                            <li><a href="content.html?page=counseling_detail">訴訟程序介紹及輔導</a></li>
+                            <li><a href="list.html?type=downloads">書狀例稿下載</a></li>
+                            <li><a href="content.html?page=faq">常見問題</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">司法保護</a></li>
+                    <li><a href="content.html?page=protection" style="display:block; padding: 10px 15px; color: var(--text-main); text-decoration: none; font-weight: 500; font-size: 1.1rem;">司法保護</a></li>
                 </ul>
                 <div class="search-box">
                     <input type="text" placeholder="全站搜尋..." aria-label="全站搜尋">
@@ -95,8 +92,8 @@
                 <h2>落實司法正義 保障人權核心</h2>
                 <p>專業．效能．便民．透明</p>
                 <div class="banner-actions">
-                    <a href="#" class="btn-primary">認識臺島地檢署</a>
-                    <a href="#" class="btn-secondary">最新防詐宣導</a>
+                    <a href="content.html?page=intro" class="btn-primary">認識臺島地檢署</a>
+                    <a href="content.html?page=antifraud" class="btn-secondary">最新防詐宣導</a>
                 </div>
             </div>
         </section>
@@ -105,23 +102,23 @@
         <section class="quick-services-section">
             <div class="container">
                 <div class="quick-services">
-                    <a href="#" class="service-card">
+                    <a href="content.html?page=citizen_judge" class="service-card">
                         <div class="service-icon"><i class="fa-solid fa-users"></i></div>
                         <h3>國民法官</h3>
                     </a>
-                    <a href="#" class="service-card">
+                    <a href="content.html?page=online" class="service-card">
                         <div class="service-icon"><i class="fa-solid fa-laptop-file"></i></div>
                         <h3>線上申辦</h3>
                     </a>
-                    <a href="#" class="service-card">
+                    <a href="list.html?type=auction" class="service-card">
                         <div class="service-icon"><i class="fa-solid fa-gavel"></i></div>
                         <h3>查扣物拍賣</h3>
                     </a>
-                    <a href="#" class="service-card">
+                    <a href="content.html?page=counseling" class="service-card">
                         <div class="service-icon"><i class="fa-solid fa-comments"></i></div>
                         <h3>訴訟輔導</h3>
                     </a>
-                    <a href="#" class="service-card">
+                    <a href="directory.html" class="service-card">
                         <div class="service-icon"><i class="fa-solid fa-phone-volume"></i></div>
                         <h3>電話分機</h3>
                     </a>
@@ -138,7 +135,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2>最新公告</h2>
-                    <a href="#" class="view-all">更多公告 <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="list.html?type=all" class="view-all">更多公告 <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 
                 <div class="news-container">
@@ -151,41 +148,9 @@
                     
                     <div class="news-content active" id="tab-all">
                         <div class="news-list">
-                            <a href="#" class="news-item">
-                                <div class="news-meta">
-                                    <span class="news-date">113-05-09</span>
-                                    <span class="tag tag-blue">最新消息</span>
-                                </div>
-                                <h3 class="news-title">臺島地檢署辦理113年度檢察官法治教育研習，提升辦案專業</h3>
-                            </a>
-                            <a href="#" class="news-item">
-                                <div class="news-meta">
-                                    <span class="news-date">113-05-05</span>
-                                    <span class="tag tag-green">新聞稿</span>
-                                </div>
-                                <h3 class="news-title">臺島地檢署偵破大型跨國詐欺機房案，聲押主嫌獲准</h3>
-                            </a>
-                            <a href="#" class="news-item">
-                                <div class="news-meta">
-                                    <span class="news-date">113-04-28</span>
-                                    <span class="tag tag-orange">電子公布欄</span>
-                                </div>
-                                <h3 class="news-title">本署113年度第2次查扣物變價拍賣公告（含汽車、重機）</h3>
-                            </a>
-                            <a href="#" class="news-item">
-                                <div class="news-meta">
-                                    <span class="news-date">113-04-20</span>
-                                    <span class="tag tag-red">公示送達</span>
-                                </div>
-                                <h3 class="news-title">113年度偵字第1234號被告李○明公示送達公告</h3>
-                            </a>
-                            <a href="#" class="news-item">
-                                <div class="news-meta">
-                                    <span class="news-date">113-04-15</span>
-                                    <span class="tag tag-blue">最新消息</span>
-                                </div>
-                                <h3 class="news-title">防詐騙宣導：接獲不明來電要求匯款，請立即撥打165反詐騙專線</h3>
-                            </a>
+                            <div class="news-item" style="justify-content: center; color: var(--text-muted); padding: 30px 0;">
+                                目前暫無最新公告
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -199,12 +164,11 @@
                     <h2>相關連結</h2>
                 </div>
                 <div class="links-grid">
-                    <a href="#" class="link-card">法務部</a>
                     <a href="#" class="link-card">最高檢察署</a>
                     <a href="#" class="link-card">高等檢察署</a>
-                    <a href="#" class="link-card">司法院</a>
-                    <a href="#" class="link-card">法務部調查局</a>
-                    <a href="#" class="link-card">內政部警政署</a>
+                    <a href="https://www.judicial.gov.tw/" target="_blank" class="link-card">司法院</a>
+                    <a href="https://www.mjib.gov.tw/" target="_blank" class="link-card">法務部調查局</a>
+                    <a href="https://www.npa.gov.tw/" target="_blank" class="link-card">內政部警政署</a>
                 </div>
             </div>
         </section>
@@ -227,19 +191,11 @@
                 <div class="footer-links">
                     <h3>資訊服務</h3>
                     <ul>
-                        <li><a href="#">網站導覽</a></li>
-                        <li><a href="#">隱私權政策</a></li>
-                        <li><a href="#">資訊安全政策</a></li>
-                        <li><a href="#">政府網站資料開放宣告</a></li>
+                        <li><a href="content.html?page=sitemap">網站導覽</a></li>
+                        <li><a href="content.html?page=privacy">隱私權政策</a></li>
+                        <li><a href="content.html?page=security">資訊安全政策</a></li>
+                        <li><a href="content.html?page=open_data">政府網站資料開放宣告</a></li>
                     </ul>
-                </div>
-                <div class="footer-qrcode">
-                    <h3>關注我們</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#"><i class="fa-brands fa-line"></i></a>
-                    </div>
                 </div>
             </div>
             <div class="footer-bottom">

@@ -1,55 +1,80 @@
+// script.js
 document.addEventListener('DOMContentLoaded', () => {
-    // Font Size Control
+    // 1. Font Size Control (Persisted)
     const fontBtns = document.querySelectorAll('.font-btn');
     const html = document.documentElement;
+    const savedSize = localStorage.getItem('taidao-font-size') || 'medium';
 
-    fontBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active class from all
+    function setFontSize(size) {
+        html.classList.remove('font-sm', 'font-lg');
+        if(fontBtns.length > 0) {
             fontBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked
-            btn.classList.add('active');
+            const activeBtn = Array.from(fontBtns).find(b => b.getAttribute('data-size') === size);
+            if(activeBtn) activeBtn.classList.add('active');
+        }
 
-            // Apply font size class to html
-            html.classList.remove('font-sm', 'font-lg');
-            const size = btn.getAttribute('data-size');
-            if (size === 'small') {
-                html.classList.add('font-sm');
-            } else if (size === 'large') {
-                html.classList.add('font-lg');
-            }
+        if (size === 'small') html.classList.add('font-sm');
+        else if (size === 'large') html.classList.add('font-lg');
+        
+        localStorage.setItem('taidao-font-size', size);
+    }
+
+    setFontSize(savedSize);
+
+    if(fontBtns.length > 0) {
+        fontBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setFontSize(btn.getAttribute('data-size'));
+            });
         });
-    });
+    }
 
-    // News Tabs Control (Mock implementation, in a real app would filter data)
+    // 2. News Tabs Control
     const tabBtns = document.querySelectorAll('.tab-btn');
+    const newsItems = document.querySelectorAll('.news-item');
     
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            tabBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            // For visual feedback, just showing we can interact
-            // In a real app, this would hide/show different content sections based on data-target
-        });
-    });
+    if(tabBtns.length > 0 && newsItems.length > 0) {
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const target = btn.getAttribute('data-target');
+                
+                newsItems.forEach(item => {
+                    const tagEl = item.querySelector('.tag');
+                    if(!tagEl) return;
+                    const tag = tagEl.textContent.trim();
+                    let shouldShow = false;
+                    
+                    if (target === 'tab-all') shouldShow = true;
+                    else if (target === 'tab-news' && (tag === '新聞稿' || tag === '最新消息')) shouldShow = true;
+                    else if (target === 'tab-board' && tag === '電子公布欄') shouldShow = true;
+                    else if (target === 'tab-notice' && tag === '公示送達') shouldShow = true;
 
-    // Simple Search Box interaction
+                    item.style.display = shouldShow ? 'flex' : 'none';
+                });
+            });
+        });
+    }
+
+    // 3. Search Box interaction
     const searchInput = document.querySelector('.search-box input');
     const searchBtn = document.querySelector('.search-box button');
 
-    if (searchBtn && searchInput) {
-        searchBtn.addEventListener('click', () => {
-            if (searchInput.value.trim() !== '') {
-                alert(\`搜尋「\${searchInput.value}」功能建置中...\`);
-                searchInput.value = '';
+    function performSearch() {
+        if(searchInput) {
+            const query = searchInput.value.trim();
+            if (query !== '') {
+                window.location.href = \`search.html?q=\${encodeURIComponent(query)}\`;
             }
-        });
+        }
+    }
 
+    if (searchBtn && searchInput) {
+        searchBtn.addEventListener('click', performSearch);
         searchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                searchBtn.click();
-            }
+            if (e.key === 'Enter') performSearch();
         });
     }
 });

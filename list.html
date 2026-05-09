@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資訊列表 - 臺灣臺島地方檢察署</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header { background-color: var(--primary-dark); color: white; padding: 40px 0; margin-bottom: 40px; }
+        .page-header h1 { font-size: 2rem; }
+        .list-container { max-width: 1000px; margin: 0 auto 60px; background: var(--bg-white); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: 40px; }
+        .list-item { display: flex; align-items: center; padding: 15px 0; border-bottom: 1px dashed var(--border-color); text-decoration: none; color: var(--text-main); transition: var(--transition); }
+        .list-item:hover { transform: translateX(5px); color: var(--primary-color); }
+        .list-date { color: var(--text-muted); font-family: monospace; font-size: 1.05rem; min-width: 120px; }
+        .list-title { font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="nav-container container">
+            <a href="index.html" class="logo">
+                <div class="logo-img-placeholder"><i class="fa-solid fa-scale-balanced"></i></div>
+                <div class="logo-text">
+                    <h1>臺灣臺島地方檢察署</h1>
+                </div>
+            </a>
+            <div class="search-box">
+                <input type="text" placeholder="全站搜尋..." aria-label="全站搜尋">
+                <button aria-label="搜尋"><i class="fa-solid fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="page-header">
+            <div class="container">
+                <h1 id="pageTitle">資訊列表</h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="list-container" id="listContent">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const listType = params.get('type') || 'all';
+            
+            const titles = {
+                'news': '新聞稿及最新消息',
+                'board': '電子公布欄',
+                'notice': '公示送達',
+                'auction': '查扣物拍賣專區',
+                'downloads': '書狀例稿下載',
+                'all': '所有公告'
+            };
+            
+            document.getElementById('pageTitle').textContent = titles[listType] || '資訊列表';
+            document.title = (titles[listType] || '資訊列表') + ' - 臺灣臺島地方檢察署';
+
+            // Generate some mock items
+            const container = document.getElementById('listContent');
+            let html = '';
+            for(let i=1; i<=10; i++) {
+                let date = \`113-05-0\${Math.floor(Math.random()*9)+1}\`;
+                let title = \`【\${titles[listType]}】第 \${i} 號公告事項\`;
+                if(listType === 'downloads') title = \`書狀範例：第 \${i} 類聲請狀空白表單 (PDF/Word)\`;
+                if(listType === 'auction') title = \`113年度第 \${i} 次查扣物（汽機車、黃金）變價拍賣公告\`;
+                
+                html += \`
+                    <a href="content.html?page=detail" class="list-item">
+                        <span class="list-date">\${date}</span>
+                        <span class="list-title">\${title}</span>
+                    </a>
+                \`;
+            }
+            container.innerHTML = html;
+        });
+    </script>
+</body>
+</html>
