@@ -238,34 +238,54 @@
         document.getElementById('queryForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form values
             const year = document.getElementById('year').value;
             const word = document.getElementById('word').value;
             const number = document.getElementById('number').value;
             const sequence = document.getElementById('sequence').value;
             
-            // Show result area
             const resultArea = document.getElementById('resultArea');
             resultArea.style.display = 'block';
             
-            // Populate mock result
-            document.getElementById('resCase').textContent = \`\${year}年\${word}字第\${number}號\`;
-            
             const now = new Date();
             const timeString = now.toLocaleTimeString('zh-TW', { hour12: false });
-            document.getElementById('updateTime').textContent = timeString;
             
-            // Randomize status for demonstration
-            const statusBadge = document.getElementById('resultStatus');
-            if (Math.random() > 0.5) {
-                statusBadge.className = 'status-badge status-active';
-                statusBadge.innerHTML = '<i class="fa-solid fa-circle-check"></i> 正在開庭中';
+            if (year === '115' && word === '他' && number === '11505001') {
+                resultArea.innerHTML = `
+                    <h3 style="margin-bottom: 20px; color: var(--primary-dark);">查詢結果</h3>
+                    <div class="result-card">
+                        <div class="status-badge" style="background-color: #e2e3e5; color: #383d41;" id="resultStatus"><i class="fa-solid fa-gavel"></i> 偵查庭結束，等待檢察官作出裁定</div>
+                        <p><strong>案號：</strong> 115年度他字第11505001號 (廉股)</p>
+                        <p><strong>被傳人身分：</strong> 被告 (顧雍冰)</p>
+                        <p><strong>開庭別：</strong> 偵查庭</p>
+                        <p><strong>偵查庭位置：</strong> 第一偵查庭/詢問室</p>
+                        <p><strong>預定開庭時間：</strong> 20:00</p>
+                        <p><strong>實際開庭時間：</strong> 20:05</p>
+                        <p style="margin-top: 15px; color: var(--text-muted); font-size: 0.9rem;"><i class="fa-solid fa-info-circle"></i> 資料更新時間：<span>${timeString}</span></p>
+                    </div>
+                `;
             } else {
-                statusBadge.className = 'status-badge status-waiting';
-                statusBadge.innerHTML = '<i class="fa-solid fa-clock"></i> 尚未開庭（請稍候）';
+                resultArea.innerHTML = `
+                    <h3 style="margin-bottom: 20px; color: var(--primary-dark);">查詢結果</h3>
+                    <div class="result-card">
+                        <div class="status-badge" id="resultStatus"></div>
+                        <p><strong>案號：</strong> <span>${year}年${word}字第${number}號</span></p>
+                        <p><strong>開庭別：</strong> 偵查庭</p>
+                        <p><strong>偵查庭位置：</strong> 第三偵查庭</p>
+                        <p><strong>預定開庭時間：</strong> 14:30</p>
+                        <p><strong>實際開庭時間：</strong> 14:35</p>
+                        <p style="margin-top: 15px; color: var(--text-muted); font-size: 0.9rem;"><i class="fa-solid fa-info-circle"></i> 資料更新時間：<span>${timeString}</span></p>
+                    </div>
+                `;
+                const badge = document.getElementById('resultStatus');
+                if (Math.random() > 0.5) {
+                    badge.className = 'status-badge status-active';
+                    badge.innerHTML = '<i class="fa-solid fa-circle-check"></i> 正在開庭中';
+                } else {
+                    badge.className = 'status-badge status-waiting';
+                    badge.innerHTML = '<i class="fa-solid fa-clock"></i> 尚未開庭（請稍候）';
+                }
             }
             
-            // Scroll to result
             resultArea.scrollIntoView({ behavior: 'smooth' });
         });
     </script>
