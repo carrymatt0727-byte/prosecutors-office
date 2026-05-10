@@ -1,79 +1,55 @@
-// script.js
+// 通用字體大小調整邏輯
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Font Size Control (Persisted)
     const fontBtns = document.querySelectorAll('.font-btn');
-    const html = document.documentElement;
-    const savedSize = localStorage.getItem('taidao-font-size') || 'medium';
+    const mainContent = document.getElementById('main-content');
 
-    function setFontSize(size) {
-        html.classList.remove('font-sm', 'font-lg');
-        if(fontBtns.length > 0) {
+    fontBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
             fontBtns.forEach(b => b.classList.remove('active'));
-            const activeBtn = Array.from(fontBtns).find(b => b.getAttribute('data-size') === size);
-            if(activeBtn) activeBtn.classList.add('active');
-        }
-
-        if (size === 'small') html.classList.add('font-sm');
-        else if (size === 'large') html.classList.add('font-lg');
-        
-        localStorage.setItem('taidao-font-size', size);
-    }
-
-    setFontSize(savedSize);
-
-    if(fontBtns.length > 0) {
-        fontBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                setFontSize(btn.getAttribute('data-size'));
-            });
+            btn.classList.add('active');
+            
+            const size = btn.dataset.size;
+            if(size === 'small') mainContent.style.fontSize = '0.9rem';
+            else if(size === 'medium') mainContent.style.fontSize = '1rem';
+            else if(size === 'large') mainContent.style.fontSize = '1.2rem';
         });
-    }
-
-    // 2. News Tabs Control
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const newsItems = document.querySelectorAll('.news-item');
-    
-    if(tabBtns.length > 0 && newsItems.length > 0) {
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                tabBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                const target = btn.getAttribute('data-target');
-                
-                newsItems.forEach(item => {
-                    const tagEl = item.querySelector('.tag');
-                    if(!tagEl) return;
-                    const tag = tagEl.textContent.trim();
-                    let shouldShow = false;
-                    
-                    if (target === 'tab-all') shouldShow = true;
-                    else if (target === 'tab-news' && (tag === '新聞稿' || tag === '最新消息')) shouldShow = true;
-                    else if (target === 'tab-board' && tag === '電子公布欄') shouldShow = true;
-                    else if (target === 'tab-notice' && tag === '公示送達') shouldShow = true;
-
-                    item.style.display = shouldShow ? 'flex' : 'none';
-                });
-            });
-        });
-    }
-
-    // 3. Search Box interaction
-    const searchBoxes = document.querySelectorAll('.search-box');
-    searchBoxes.forEach(box => {
-        const input = box.querySelector('input');
-        const btn = box.querySelector('button');
-        if (input && btn) {
-            const doSearch = () => {
-                const query = input.value.trim();
-                if (query !== '') {
-                    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
-                }
-            };
-            btn.addEventListener('click', doSearch);
-            input.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') doSearch();
-            });
-        }
     });
+
+    // 初始化訪客統計
+    initStats();
 });
+
+// 訪客統計功能
+function initStats() {
+    const statsContainer = document.querySelector('.footer-stats');
+    if (!statsContainer) return;
+
+    // 設定累計人次 (固定一個基礎數字 + 隨機增長)
+    const baseCount = 1250432;
+    const totalElement = document.getElementById('total-visitors');
+    if (totalElement) {
+        totalElement.textContent = baseCount.toLocaleString();
+    }
+
+    // 設定線上人數跳動
+    const onlineElement = document.getElementById('online-users');
+    if (onlineElement) {
+        let currentOnline = Math.floor(Math.random() * (55 - 38 + 1)) + 38; // 38-55 之間
+        onlineElement.textContent = currentOnline;
+
+        setInterval(() => {
+            const change = Math.floor(Math.random() * 3) - 1; // -1, 0, 1
+            currentOnline += change;
+            if (currentOnline < 30) currentOnline = 30;
+            if (currentOnline > 80) currentOnline = 80;
+            onlineElement.textContent = currentOnline;
+        }, 5000);
+    }
+
+    // 設定更新日期 (今天)
+    const dateElement = document.getElementById('last-update');
+    if (dateElement) {
+        const now = new Date();
+        dateElement.textContent = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+    }
+}

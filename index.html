@@ -17,7 +17,7 @@
                 <div class="top-links">
                     <a href="index.html">回首頁</a>
                     <a href="content.html?page=sitemap">網站導覽</a>
-                    <a href="content.html?page=contact">檢察長信箱</a>
+                    <a href="contact.html">檢察長信箱</a>
                 </div>
                 <div class="font-size-controls">
                     <span>字體大小：</span>
@@ -48,6 +48,7 @@
                             <li><a href="organization.html">機關組織與人員名冊</a></li>
                         </ul>
                     </li>
+                    <li><a href="guide.html">民眾導覽</a></li>
                     <li class="dropdown">
                         <a href="content.html?page=service">為民服務 <i class="fa-solid fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
@@ -74,7 +75,7 @@
                             <li><a href="content.html?page=faq">常見問題</a></li>
                         </ul>
                     </li>
-                    <li><a href="content.html?page=protection" style="display:block; padding: 10px 15px; color: var(--text-main); text-decoration: none; font-weight: 500; font-size: 1.1rem;">司法保護</a></li>
+                    <li><a href="protection.html">司法保護</a></li>
                 </ul>
                 <div class="search-box">
                     <input type="text" placeholder="全站搜尋..." aria-label="全站搜尋">
@@ -86,16 +87,20 @@
 
     <main id="main-content">
         <!-- Hero Banner -->
-        <section class="hero-banner">
-            <div class="banner-content container">
-                <h2>落實司法正義 保障人權核心</h2>
-                <p>專業．效能．便民．透明</p>
-                <div class="banner-actions">
-                    <a href="content.html?page=intro" class="btn-primary">認識臺島地檢署</a>
-                    <a href="content.html?page=antifraud" class="btn-secondary">最新防詐宣導</a>
-                </div>
+        <section class="hero-slider">
+        <div class="slide" style="background-image: url('hero1.jpg');"></div>
+        <div class="slide" style="background-image: url('hero2.jpg');"></div>
+        <div class="slide" style="background-image: url('hero3.jpg');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <h2 class="animate-up">追訴犯罪 伸張正義</h2>
+            <p class="animate-up" style="animation-delay: 0.2s;">謹守法律 / 維護公義 / 安定人心 / 穩定社會</p>
+            <div class="hero-btns animate-up" style="animation-delay: 0.4s;">
+                <a href="guide.html" class="btn btn-primary">民眾導覽</a>
+                <a href="list.html?type=news" class="btn btn-outline">最新消息</a>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- Quick Services -->
         <section class="quick-services-section">
@@ -147,15 +152,60 @@
                     
                     <div class="news-content active" id="tab-all">
                         <div class="news-list">
-                            <div class="news-item" style="justify-content: center; color: var(--text-muted); padding: 30px 0;">
-                                目前暫無最新公告
-                            </div>
+
+                            <a href="summons_11505001.pdf" target="_blank" class="news-item" style="display: flex; text-decoration: none;">
+                                <div class="news-date">
+                                    <span class="day">09</span>
+                                    <span class="month">5月</span>
+                                </div>
+                                <div class="news-text">
+                                    <h3><i class="fa-solid fa-file-pdf" style="color: #d32f2f; margin-right: 5px;"></i>公示送達本署115年度他字第11505001號傳票乙件</h3>
+                                    <span class="tag notice" style="display:inline-block; background-color:var(--secondary-color); color:white; padding:3px 8px; border-radius:4px; font-size:0.8rem; margin-top:5px;">公示送達</span>
+                                </div>
+                            </a>
+                            <a href="list.html?type=auction" class="news-item" style="display: flex; text-decoration: none;">
+                                <div class="news-date">
+                                    <span class="day">08</span>
+                                    <span class="month">5月</span>
+                                </div>
+                                <div class="news-text">
+                                    <h3>115年度第2次無底價查扣物（機車、黃金）拍賣公告</h3>
+                                    <span class="tag board" style="display:inline-block; background-color:#f67280; color:white; padding:3px 8px; border-radius:4px; font-size:0.8rem; margin-top:5px;">查扣物拍賣</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         
+        <!-- Campaign Section -->
+        <section class="campaign-section" style="padding: 60px 0; background-color: #f8f9fa;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>重要政令宣導</h2>
+                </div>
+                <div class="campaign-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+                    <a href="content.html?page=antifraud" class="campaign-card" style="border-radius: 8px; padding: 25px 20px; text-align: center; text-decoration: none; color: white; display: flex; flex-direction: column; justify-content: center; min-height: 120px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background: linear-gradient(135deg, #e65c00 0%, #F9D423 100%); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 8px; font-weight: 700;"><i class="fa-solid fa-shield-halved"></i> 全民反詐騙</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.9; margin: 0;">全民識詐、堵詐、阻詐、懲詐</p>
+                    </a>
+                    <a href="#" class="campaign-card" style="border-radius: 8px; padding: 25px 20px; text-align: center; text-decoration: none; color: white; display: flex; flex-direction: column; justify-content: center; min-height: 120px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 8px; font-weight: 700;"><i class="fa-solid fa-ban"></i> 青春專案(反毒)</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.9; margin: 0;">拒絕毒品誘惑，迎向陽光人生</p>
+                    </a>
+                    <a href="#" class="campaign-card" style="border-radius: 8px; padding: 25px 20px; text-align: center; text-decoration: none; color: white; display: flex; flex-direction: column; justify-content: center; min-height: 120px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 8px; font-weight: 700;"><i class="fa-solid fa-handcuffs"></i> 掃黑專案</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.9; margin: 0;">強力掃蕩黑幫，維護社會治安</p>
+                    </a>
+                    <a href="list.html?type=info" class="campaign-card" style="border-radius: 8px; padding: 25px 20px; text-align: center; text-decoration: none; color: white; display: flex; flex-direction: column; justify-content: center; min-height: 120px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background: linear-gradient(135deg, #b06ab3 0%, #4568dc 100%); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 8px; font-weight: 700;"><i class="fa-solid fa-money-bill-wave"></i> 反賄選專區</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.9; margin: 0;">檢舉賄選，人人有責；最高獎金一千萬元</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- Useful Links -->
         <section class="links-section">
             <div class="container">
@@ -176,6 +226,21 @@
 
     <footer class="site-footer">
         <div class="container">
+        <div class="footer-stats">
+            <div class="stat-item">
+                <span class="stat-label">累計瀏覽人次</span>
+                <span class="stat-value" id="total-visitors">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">線上人數</span>
+                <span class="stat-value"><span class="online-dot"></span><span id="online-users">0</span></span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">最後更新日期</span>
+                <span class="stat-value" id="last-update">0000-00-00</span>
+            </div>
+        </div>
+        <div class="footer-bottom">
             <div class="footer-grid">
                 <div class="footer-info">
                     <div class="footer-logo">
